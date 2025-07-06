@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesores Contables & Financieros - Tu Socio Estratégico</title>
+    <!-- Descripción para SEO -->
+    <meta name="description" content="Asesoría contable y financiera experta en Guamo, Tolima. Impulsa tu negocio con servicios tributarios, contables, revisoría fiscal y más. Contacta por WhatsApp.">
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="asesores contables, asesores financieros, Guamo, Tolima, contabilidad, tributaria, revisoría fiscal, finanzas, pymes, Colombia">
+    <!-- Enlace al CDN de Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind para usar la fuente Inter y colores personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // Fuente principal
+                    },
+                    colors: {
+                        'primary-dark': '#1A2E47', // Azul Oscuro para elementos principales
+                        'secondary-light': '#F0F2F5', // Gris Claro para fondos
+                        'text-medium': '#6C7A89', // Gris Medio para texto secundario
+                        'accent-teal': '#008C8C', // Verde Azulado para acentos y CTA
+                        'white': '#FFFFFF', // Blanco
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Enlace a Google Fonts para la fuente Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos personalizados para el fondo del hero section */
+        .hero-background {
+            background-image: url('https://placehold.co/1920x800/1A2E47/FFFFFF?text=Equipo+de+Asesores+Contables'); /* Imagen de fondo profesional */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Estilo para el overlay oscuro en el hero section */
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro para mejor legibilidad del texto */
+        }
+    </style>
+</head>
+<body class="font-sans text-primary-dark bg-white antialiased">
+
+    <!-- Encabezado de la página (Header) -->
+    <header class="bg-primary-dark text-white shadow-lg py-4">
+        <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+            <!-- Logo de la empresa -->
+            <a href="#hero" class="flex items-center space-x-2">
+                <!-- SVG de un logo simple y profesional -->
+                <svg class="w-8 h-8 text-accent-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.31L18.6 7.5 12 10.69 5.4 7.5 12 4.31zM4 9l8 4 8-4v6l-8 4-8-4V9zm8 9.38L5.4 15.5 12 12.31l6.6 3.19L12 18.38z"/>
+                </svg>
+                <span class="text-2xl font-bold tracking-tight">Asesores Contables & Financieros</span>
+            </a>
+            <!-- Navegación principal (oculta en móviles, visible en pantallas grandes) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#beneficios" class="hover:text-accent-teal transition-colors duration-300">Beneficios</a>
+                <a href="#servicios" class="hover:text-accent-teal transition-colors duration-300">Servicios</a>
+                <a href="#clientes" class="hover:text-accent-teal transition-colors duration-300">Clientes</a>
+                <a href="#quienes-somos" class="hover:text-accent-teal transition-colors duration-300">Quiénes Somos</a>
+                <a href="#contacto" class="hover:text-accent-teal transition-colors duration-300">Contacto</a>
+            </nav>
+            <!-- Botón de menú para móviles (ejemplo, no funcional sin JS) -->
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección 1: Descripción inicial con llamado a la acción (Hero Section) -->
+        <section id="hero" class="relative hero-background py-24 md:py-32 lg:py-48 flex items-center justify-center text-center">
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Tu Socio Estratégico en <span class="text-accent-teal">Contabilidad y Finanzas</span>
+                </h1>
+                <p class="text-lg sm:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200">
+                    En Asesores Contables & Financieros, simplificamos tus procesos y maximizamos tu potencial de crecimiento en Guamo, Tolima y toda Colombia.
+                </p>
+                <!-- Botón de llamado a la acción a WhatsApp -->
+                <a href="https://wa.me/TUNUMERODEWHATSAPP?text=Hola,%20me%20interesa%20una%20asesoría%20contable/financiera."
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center px-8 py-4 bg-accent-teal text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-accent-teal focus:ring-opacity-50 animate-fade-in-up delay-400">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                    Agenda Tu Asesoría Gratuita
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección 2: Beneficios de trabajar con nosotros -->
+        <section id="beneficios" class="py-16 sm:py-20 lg:py-24 bg-secondary-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-primary-dark">
+                    ¿Por Qué Elegirnos? <span class="text-accent-teal">Beneficios Que Impulsan Tu Éxito</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tarjeta de Beneficio 1 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Ahorro de Tiempo y Recursos</h3>
+                        <p class="text-text-medium">Libera tu tiempo para enfocarte en el core de tu negocio, nosotros nos encargamos de tus finanzas.</p>
+                    </article>
+                    <!-- Tarjeta de Beneficio 2 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Cumplimiento Normativo Garantizado</h3>
+                        <p class="text-text-medium">Mantente al día con las regulaciones fiscales y contables, evitando multas y sanciones.</p>
+                    </article>
+                    <!-- Tarjeta de Beneficio 3 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Análisis Financiero Estratégico</h3>
+                        <p class="text-text-medium">Toma decisiones informadas con reportes y proyecciones claras de tu situación.</p>
+                    </article>
+                    <!-- Tarjeta de Beneficio 4 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Atención Personalizada</h3>
+                        <p class="text-text-medium">Un equipo de expertos dedicado a entender y resolver tus necesidades específicas.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Los servicios disponibles -->
+        <section id="servicios" class="py-16 sm:py-20 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-primary-dark">
+                    Nuestros <span class="text-accent-teal">Servicios Expertos</span> para Tu Negocio
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta de Servicio 1 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Tributaria</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Planificación fiscal estratégica, preparación y presentación de declaraciones de impuestos (IVA, Renta, Retención en la Fuente), atención a requerimientos de la DIAN y optimización de tu carga tributaria.
+                        </p>
+                    </article>
+                    <!-- Tarjeta de Servicio 2 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Contable</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Implementación de Normas Internacionales de Información Financiera (NIIF), elaboración de estados financieros, registro de transacciones, contabilidad general para pymes y grandes empresas.
+                        </p>
+                    </article>
+                    <!-- Tarjeta de Servicio 3 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Revisoría Fiscal</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Auditoría interna y externa, control de gestión, certificación de estados financieros, evaluación de sistemas de control interno y cumplimiento de la normativa legal.
+                        </p>
+                    </article>
+                    <!-- Tarjeta de Servicio 4 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Financiera</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Análisis de flujo de caja, estructuración de deudas, optimización de inversiones, elaboración de presupuestos y proyecciones financieras para la toma de decisiones estratégicas.
+                        </p>
+                    </article>
+                    <!-- Tarjeta de Servicio 5 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Gestión de Nómina</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Liquidación de salarios y prestaciones sociales, gestión de seguridad social, elaboración de contratos y manejo de novedades de personal.
+                        </p>
+                    </article>
+                    <!-- Tarjeta de Servicio 6 -->
+                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
+                        <div class="text-accent-teal text-5xl mb-6">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Consultoría y Capacitación</h3>
+                        <p class="text-text-medium leading-relaxed">
+                            Programas de capacitación en temas contables y financieros, consultoría especializada para proyectos y optimización de procesos internos.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Clientes importantes o que nos recomiendan (Testimonios) -->
+        <section id="clientes" class="py-16 sm:py-20 lg:py-24 bg-secondary-light">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-primary-dark">
+                    Nuestros Clientes <span class="text-accent-teal">Confían en Nosotros</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    <!-- Testimonio 1 -->
+                    <blockquote class="bg-white p-8 rounded-xl shadow-md text-left flex flex-col items-center sm:flex-row sm:items-start">
+                        <img src="https://placehold.co/80x80/008C8C/FFFFFF?text=JP" alt="Foto de Juan Pérez" class="w-20 h-20 rounded-full mb-4 sm:mb-0 sm:mr-6 flex-shrink-0 object-cover">
+                        <div>
+                            <p class="text-lg italic text-text-medium mb-4">
+                                "Gracias a Asesores Contables & Financieros, nuestra contabilidad es ahora clara y eficiente. Su asesoría fue clave para nuestro crecimiento."
+                            </p>
+                            <footer class="font-semibold text-primary-dark">- Juan Pérez, <span class="text-accent-teal">Gerente de InnovaTech S.A.S.</span></footer>
+                        </div>
+                    </blockquote>
+                    <!-- Testimonio 2 -->
+                    <blockquote class="bg-white p-8 rounded-xl shadow-md text-left flex flex-col items-center sm:flex-row sm:items-start">
+                        <img src="https://placehold.co/80x80/1A2E47/FFFFFF?text=MG" alt="Foto de María García" class="w-20 h-20 rounded-full mb-4 sm:mb-0 sm:mr-6 flex-shrink-0 object-cover">
+                        <div>
+                            <p class="text-lg italic text-text-medium mb-4">
+                                "Profesionales y comprometidos. Superaron nuestras expectativas en cada etapa. Su apoyo ha sido invaluable."
+                            </p>
+                            <footer class="font-semibold text-primary-dark">- María García, <span class="text-accent-teal">Directora Financiera de Constructora Solida</span></footer>
+                        </div>
+                    </blockquote>
+                    <!-- Puedes añadir más testimonios o logos de clientes aquí -->
+                </div>
+                <!-- Sección para logos de clientes (opcional, si tienes permiso) -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-semibold mb-8 text-primary-dark">Algunas empresas que confían en nosotros:</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                        <!-- Logo de Cliente 1 -->
+                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+A" alt="Logo de Empresa A" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- Logo de Cliente 2 -->
+                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+B" alt="Logo de Empresa B" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- Logo de Cliente 3 -->
+                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+C" alt="Logo de Empresa C" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- Logo de Cliente 4 -->
+                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+D" alt="Logo de Empresa D" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Quiénes somos -->
+        <section id="quienes-somos" class="py-16 sm:py-20 lg:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-primary-dark">
+                            Asesores Contables & Financieros: <span class="text-accent-teal">Tu Equipo de Confianza</span>
+                        </h2>
+                        <p class="text-lg text-text-medium leading-relaxed mb-6">
+                            Somos un equipo de contadores y financieros apasionados por ayudar a empresas y personas a alcanzar sus metas. Con años de experiencia y un profundo conocimiento de la normativa colombiana, nos dedicamos a ofrecer soluciones personalizadas, transparentes y eficientes.
+                        </p>
+                        <p class="text-lg text-text-medium leading-relaxed">
+                            Nuestra misión es ser el aliado estratégico que impulse tu tranquilidad financiera y tu éxito empresarial. Nos enorgullece la ética, la precisión y el compromiso con cada uno de nuestros clientes.
+                        </p>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <!-- Imagen representativa del equipo o la empresa -->
+                        <img src="https://placehold.co/600x400/1A2E47/FFFFFF?text=Equipo+Profesional" alt="Equipo de Asesores Contables y Financieros" class="rounded-xl shadow-lg max-w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página (Footer) -->
+    <footer id="contacto" class="bg-primary-dark text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Columna del Logo y Nombre -->
+            <div class="flex flex-col items-center md:items-start">
+                <a href="#hero" class="flex items-center space-x-2 mb-4">
+                    <svg class="w-10 h-10 text-accent-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.31L18.6 7.5 12 10.69 5.4 7.5 12 4.31zM4 9l8 4 8-4v6l-8 4-8-4V9zm8 9.38L5.4 15.5 12 12.31l6.6 3.19L12 18.38z"/>
+                    </svg>
+                    <span class="text-3xl font-bold tracking-tight">Asesores Contables & Financieros</span>
+                </a>
+                <p class="text-text-medium text-sm mt-2">&copy; 2025 Todos los derechos reservados.</p>
+            </div>
+
+            <!-- Columna de Información de Contacto -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-accent-teal">Contáctanos</h3>
+                <address class="not-italic text-text-medium space-y-2">
+                    <p><i class="fas fa-map-marker-alt mr-2 text-white"></i> Carrera 5 # 3-20, Guamo, Tolima, Colombia</p>
+                    <p><i class="fas fa-phone-alt mr-2 text-white"></i> <a href="tel:+573001234567" class="hover:text-white transition-colors duration-300">+57 300 123 4567</a></p>
+                    <p><i class="fas fa-envelope mr-2 text-white"></i> <a href="mailto:info@asesorescyf.com" class="hover:text-white transition-colors duration-300">info@asesorescyf.com</a></p>
+                    <p><i class="fab fa-whatsapp mr-2 text-white"></i> <a href="https://wa.me/TUNUMERODEWHATSAPP?text=Hola,%20me%20interesa%20una%20asesoría." target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300">Envíanos un WhatsApp</a></p>
+                </address>
+            </div>
+
+            <!-- Columna de Redes Sociales y Enlaces Rápidos -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-accent-teal">Síguenos</h3>
+                <div class="flex justify-center md:justify-start space-x-4 mb-6">
+                    <a href="#" class="text-white hover:text-accent-teal transition-colors duration-300 text-2xl" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-accent-teal transition-colors duration-300 text-2xl" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-accent-teal transition-colors duration-300 text-2xl" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-accent-teal">Enlaces Rápidos</h3>
+                <ul class="space-y-2 text-text-medium">
+                    <li><a href="#beneficios" class="hover:text-white transition-colors duration-300">Beneficios</a></li>
+                    <li><a href="#servicios" class="hover:text-white transition-colors duration-300">Servicios</a></li>
+                    <li><a href="#quienes-somos" class="hover:text-white transition-colors duration-300">Quiénes Somos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors duration-300">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
