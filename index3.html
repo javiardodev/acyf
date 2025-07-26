@@ -406,6 +406,138 @@
                 max-width: none;
             }
         }
+        
+        /* Animaciones mejoradas para tarjetas de beneficios */
+        .benefit-card-enhanced {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+        }
+        
+        /* Efecto de shimmer antes del hover */
+        .benefit-card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 140, 140, 0.08), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        /* Hover state para tarjetas de beneficios */
+        .benefit-card-enhanced:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 140, 140, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+        }
+        
+        /* Activar efecto shimmer en hover */
+        .benefit-card-enhanced:hover::before {
+            left: 100%;
+        }
+        
+        /* Animaciones para iconos de beneficios */
+        .benefit-icon-enhanced {
+            color: #008C8C;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            position: relative;
+        }
+        
+        /* Efecto de glow para el icono en hover */
+        .benefit-card-enhanced:hover .benefit-icon-enhanced {
+            transform: scale(1.15) rotateY(10deg);
+            color: #006b6b;
+            text-shadow: 0 0 20px rgba(0, 140, 140, 0.3);
+        }
+        
+        /* Animación del título */
+        .benefit-title-enhanced {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #1A2E47;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .benefit-card-enhanced:hover .benefit-title-enhanced {
+            color: #008C8C;
+        }
+        
+        /* Animación del texto descriptivo */
+        .benefit-description-enhanced {
+            color: #4A5568;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+        
+        .benefit-card-enhanced:hover .benefit-description-enhanced {
+            color: #2D3748;
+        }
+        
+        /* Animaciones de entrada escalonadas para beneficios */
+        @keyframes fadeInUpBenefit {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .benefit-card-enhanced {
+            animation: fadeInUpBenefit 0.7s ease-out both;
+        }
+        
+        .benefit-card-enhanced:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card-enhanced:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-card-enhanced:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-card-enhanced:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Efecto de pulsado sutil en el icono */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .benefit-card-enhanced:hover .benefit-icon-enhanced {
+            animation: subtlePulse 2s ease-in-out infinite;
+        }
+        
+        /* Mejora de accesibilidad - estados de focus */
+        .benefit-card-enhanced:focus-within {
+            outline: 2px solid #008C8C;
+            outline-offset: 2px;
+        }
+        
+        /* Media query para reducir animaciones en dispositivos con preferencia de movimiento reducido */
+        @media (prefers-reduced-motion: reduce) {
+            .benefit-card-enhanced,
+            .benefit-icon-enhanced,
+            .benefit-title-enhanced,
+            .benefit-description-enhanced {
+                animation: none;
+                transition: none;
+            }
+            
+            .benefit-card-enhanced:hover {
+                transform: none;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-primary-dark bg-white antialiased">
@@ -485,36 +617,36 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Tarjeta de Beneficio 1 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="benefit-card-enhanced">
+                        <div class="benefit-icon-enhanced">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Ahorro de Tiempo y Recursos</h3>
-                        <p class="text-gray-700">Libera tu tiempo para enfocarte en el core de tu negocio, nosotros nos encargamos de tus finanzas.</p>
+                        <h3 class="benefit-title-enhanced">Ahorro de Tiempo y Recursos</h3>
+                        <p class="benefit-description-enhanced">Libera tu tiempo para enfocarte en el core de tu negocio, nosotros nos encargamos de tus finanzas.</p>
                     </article>
                     <!-- Tarjeta de Beneficio 2 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="benefit-card-enhanced">
+                        <div class="benefit-icon-enhanced">
                             <i class="fas fa-check-circle"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Cumplimiento Normativo Garantizado</h3>
-                        <p class="text-gray-700">Mantente al día con las regulaciones fiscales y contables, evitando multas y sanciones.</p>
+                        <h3 class="benefit-title-enhanced">Cumplimiento Normativo Garantizado</h3>
+                        <p class="benefit-description-enhanced">Mantente al día con las regulaciones fiscales y contables, evitando multas y sanciones.</p>
                     </article>
                     <!-- Tarjeta de Beneficio 3 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="benefit-card-enhanced">
+                        <div class="benefit-icon-enhanced">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Análisis Financiero Estratégico</h3>
-                        <p class="text-gray-700">Toma decisiones informadas con reportes y proyecciones claras de tu situación.</p>
+                        <h3 class="benefit-title-enhanced">Análisis Financiero Estratégico</h3>
+                        <p class="benefit-description-enhanced">Toma decisiones informadas con reportes y proyecciones claras de tu situación.</p>
                     </article>
                     <!-- Tarjeta de Beneficio 4 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-2">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="benefit-card-enhanced">
+                        <div class="benefit-icon-enhanced">
                             <i class="fas fa-handshake"></i>
                         </div>
-                        <h3 class="text-xl font-semibold mb-3 text-primary-dark">Atención Personalizada</h3>
-                        <p class="text-gray-700">Un equipo de expertos dedicado a entender y resolver tus necesidades específicas.</p>
+                        <h3 class="benefit-title-enhanced">Atención Personalizada</h3>
+                        <p class="benefit-description-enhanced">Un equipo de expertos dedicado a entender y resolver tus necesidades específicas.</p>
                     </article>
                 </div>
             </div>
