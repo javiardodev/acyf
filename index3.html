@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asesores Contables & Financieros | Tu Socio Estratégico</title>
+    <!-- DNS prefetch para mejorar rendimiento -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Favicon para la pestaña del navegador -->
     <link rel="icon" href="assets/logo.ico" type="image/x-icon">
     <!-- Descripción para SEO -->
@@ -18,7 +24,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Fuente principal
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'], // Fuente principal con fallbacks
                     },
                     colors: {
                         'primary-dark': '#1A2E47', // Azul Oscuro para elementos principales
@@ -31,21 +37,162 @@
             }
         }
     </script>
-    <!-- Enlace a Google Fonts para la fuente Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Enlace a Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace a Google Fonts con carga asíncrona -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    <!-- Preload de imagen LCP para optimización crítica -->
+    <link rel="preload" href="https://placehold.co/1920x800/1A2E47/FFFFFF?text=Equipo+de+Asesores+Contables" as="image" fetchpriority="high">
+    <!-- Preload Font Awesome para mejor rendimiento -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Font Awesome con carga asíncrona -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
     <style>
-        /* Estilos personalizados para el fondo del hero section */
-        .hero-background {
-            background-image: url('https://placehold.co/1920x800/1A2E47/FFFFFF?text=Equipo+de+Asesores+Contables'); /* Imagen de fondo profesional */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        /* CSS crítico inline para Above-the-Fold */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        /* Estilo para el overlay oscuro en el hero section */
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro para mejor legibilidad del texto */
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-display: swap;
+            line-height: 1.6;
+            color: #1A2E47;
+            background-color: #FFFFFF;
+        }
+        
+        /* Header crítico */
+        .header-critical {
+            background-color: #1A2E47;
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container-critical {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-critical {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-critical {
+            background-color: #1A2E47;
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-overlay-critical {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content-critical {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .hero-title-critical {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle-critical {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button-critical {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            background-color: #008C8C;
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-critical:hover {
+            background-color: rgba(0, 140, 140, 0.9);
+            transform: scale(1.05);
+        }
+        
+        /* Menu hamburguesa crítico */
+        .menu-button-critical {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+        }
+        
+        @media (max-width: 1023px) {
+            .menu-button-critical {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        /* Optimización de fuentes para PageSpeed */
+        @font-face {
+            font-family: 'Inter';
+            font-display: swap;
+            src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+        }
+        
+        /* Font Awesome optimización */
+        .fas, .fab {
+            font-display: swap;
+        }
+        
+        /* Fallback para iconos antes de que cargue Font Awesome */
+        .fas::before, .fab::before {
+            font-display: swap;
+        }
+        
+        /* Optimización de carga progresiva */
+        body {
+            font-display: swap;
         }
         
         /* Animaciones para el menú desplegable */
@@ -94,10 +241,10 @@
 <body class="font-sans text-primary-dark bg-white antialiased">
 
     <!-- Encabezado de la página (Header) -->
-    <header class="bg-primary-dark text-white shadow-lg py-4 relative">
-        <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+    <header class="bg-primary-dark text-white shadow-lg py-4 relative header-critical">
+        <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 container-critical">
             <!-- Logo de la empresa -->
-            <a href="#hero" class="flex items-center space-x-2">
+            <a href="#hero" class="flex items-center space-x-2 logo-critical">
                 <!-- SVG de un logo simple y profesional -->
                 <svg class="w-8 h-8 text-accent-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.31L18.6 7.5 12 10.69 5.4 7.5 12 4.31zM4 9l8 4 8-4v6l-8 4-8-4V9zm8 9.38L5.4 15.5 12 12.31l6.6 3.19L12 18.38z"/>
@@ -105,8 +252,8 @@
                 <span class="text-2xl font-bold tracking-tight">Asesores Contables & Financieros</span>
             </a>
             <!-- Botón de menú hamburguesa (visible hasta lg, oculto en pantallas grandes) -->
-            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle menu">
-                <i id="hamburger-icon" class="fas fa-bars text-xl hamburger-icon"></i>
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200 menu-button-critical" aria-label="Toggle menu">
+                <span id="hamburger-icon" class="text-xl hamburger-icon">☰</span>
             </button>
             
             <!-- Navegación principal para pantallas grandes (visible solo en lg y superiores) -->
@@ -135,20 +282,26 @@
 
     <main>
         <!-- Sección 1: Descripción inicial con llamado a la acción (Hero Section) -->
-        <section id="hero" class="relative hero-background py-24 md:py-32 lg:py-48 flex items-center justify-center text-center">
-            <div class="absolute inset-0 hero-overlay"></div>
-            <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-                    Tu Socio Estratégico en <span class="text-accent-teal">Contabilidad y Finanzas</span>
+        <section id="hero" class="relative py-24 md:py-32 lg:py-48 flex items-center justify-center text-center hero-critical">
+            <!-- Imagen LCP optimizada con fetchpriority high -->
+            <img src="https://placehold.co/1920x800/1A2E47/FFFFFF?text=Equipo+de+Asesores+Contables" 
+                 alt="Equipo profesional de Asesores Contables y Financieros" 
+                 fetchpriority="high"
+                 class="absolute inset-0 w-full h-full object-cover"
+                 loading="eager">
+            <div class="absolute inset-0 hero-overlay hero-overlay-critical"></div>
+            <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-white hero-content-critical">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up hero-title-critical">
+                    Tu Socio Estratégico en <span class="text-accent-teal" style="color: #008C8C;">Contabilidad y Finanzas</span>
                 </h1>
-                <p class="text-lg sm:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200">
+                <p class="text-lg sm:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200 hero-subtitle-critical">
                     En Asesores Contables & Financieros, simplificamos tus procesos y maximizamos tu potencial de crecimiento en Guamo, Tolima y toda Colombia.
                 </p>
                 <!-- Botón de llamado a la acción a WhatsApp -->
                 <a href="https://wa.me/+573058555694?text=Hola,%20me%20interesa%20una%20asesoría%20contable/financiera."
                    target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center px-8 py-4 bg-accent-teal text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-accent-teal focus:ring-opacity-50 animate-fade-in-up delay-400">
-                    <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                   class="inline-flex items-center justify-center px-8 py-4 bg-accent-teal text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-accent-teal focus:ring-opacity-50 animate-fade-in-up delay-400 cta-button-critical">
+                    <span class="fab fa-whatsapp mr-3 text-2xl" style="margin-right: 0.75rem;">📱</span>
                     Agenda Tu Asesoría Gratuita
                 </a>
             </div>
@@ -412,8 +565,13 @@
                 isMenuOpen = true;
                 mobileMenu.classList.add('show');
                 hamburgerIcon.classList.add('active');
-                hamburgerIcon.classList.remove('fa-bars');
-                hamburgerIcon.classList.add('fa-times');
+                // Cambiar icono a X cuando el menú está abierto
+                if (hamburgerIcon.classList.contains('fas')) {
+                    hamburgerIcon.classList.remove('fa-bars');
+                    hamburgerIcon.classList.add('fa-times');
+                } else {
+                    hamburgerIcon.textContent = '✕';
+                }
             }
 
             // Función para ocultar el menú con animación
@@ -422,8 +580,13 @@
                     isMenuOpen = false;
                     mobileMenu.classList.remove('show');
                     hamburgerIcon.classList.remove('active');
-                    hamburgerIcon.classList.remove('fa-times');
-                    hamburgerIcon.classList.add('fa-bars');
+                    // Restaurar icono de hamburguesa cuando el menú está cerrado
+                    if (hamburgerIcon.classList.contains('fas')) {
+                        hamburgerIcon.classList.remove('fa-times');
+                        hamburgerIcon.classList.add('fa-bars');
+                    } else {
+                        hamburgerIcon.textContent = '☰';
+                    }
                 }
             }
 
@@ -462,6 +625,49 @@
                     !mobileMenu.contains(event.target) && 
                     !mobileMenuButton.contains(event.target)) {
                     hideMobileMenu();
+                }
+            });
+        });
+    </script>
+    
+    <!-- Script para cargar recursos no críticos después del LCP -->
+    <script>
+        // Función para cargar CSS de manera asíncrona
+        function loadCSS(href) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        }
+        
+        // Cargar recursos no críticos después del evento load
+        window.addEventListener('load', function() {
+            // Cargar estilos adicionales que no son críticos para el above-the-fold
+            setTimeout(() => {
+                // Los estilos principales ya están cargados con preload
+                // Reemplazar iconos de fallback con Font Awesome
+                const hamburgerIcon = document.getElementById('hamburger-icon');
+                if (hamburgerIcon && hamburgerIcon.textContent === '☰') {
+                    hamburgerIcon.innerHTML = '';
+                    hamburgerIcon.className = 'fas fa-bars text-xl hamburger-icon';
+                }
+                
+                // Reemplazar emoji de WhatsApp con icono Font Awesome
+                const whatsappIcon = document.querySelector('.cta-button-critical span');
+                if (whatsappIcon && whatsappIcon.textContent === '📱') {
+                    whatsappIcon.innerHTML = '';
+                    whatsappIcon.className = 'fab fa-whatsapp mr-3 text-2xl';
+                }
+            }, 100);
+        });
+        
+        // Fallback para asegurar que las fuentes se carguen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar que los preloads se convirtieron en stylesheets
+            const preloadLinks = document.querySelectorAll('link[rel="preload"][as="style"]');
+            preloadLinks.forEach(link => {
+                if (!link.rel.includes('stylesheet')) {
+                    link.rel = 'stylesheet';
                 }
             });
         });
