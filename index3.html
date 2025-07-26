@@ -47,12 +47,54 @@
         .hero-overlay {
             background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro para mejor legibilidad del texto */
         }
+        
+        /* Animaciones para el menú desplegable */
+        .mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .mobile-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Animación para los enlaces del menú */
+        .mobile-menu a {
+            transition: all 0.2s ease-in-out;
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+        
+        .mobile-menu.show a {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        /* Delays escalonados para los enlaces */
+        .mobile-menu.show a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.show a:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu.show a:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu.show a:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu.show a:nth-child(5) { transition-delay: 0.3s; }
+        
+        /* Animación para el icono hamburguesa */
+        .hamburger-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .hamburger-icon.active {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body class="font-sans text-primary-dark bg-white antialiased">
 
     <!-- Encabezado de la página (Header) -->
-    <header class="bg-primary-dark text-white shadow-lg py-4">
+    <header class="bg-primary-dark text-white shadow-lg py-4 relative">
         <div class="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
             <!-- Logo de la empresa -->
             <a href="#hero" class="flex items-center space-x-2">
@@ -62,18 +104,32 @@
                 </svg>
                 <span class="text-2xl font-bold tracking-tight">Asesores Contables & Financieros</span>
             </a>
-            <!-- Navegación principal (oculta en móviles, visible en pantallas grandes) -->
-            <nav class="hidden md:flex space-x-6">
+            <!-- Botón de menú hamburguesa (visible hasta lg, oculto en pantallas grandes) -->
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+                <i id="hamburger-icon" class="fas fa-bars text-xl hamburger-icon"></i>
+            </button>
+            
+            <!-- Navegación principal para pantallas grandes (visible solo en lg y superiores) -->
+            <nav class="hidden lg:flex lg:flex-row lg:space-x-6">
                 <a href="#beneficios" class="hover:text-accent-teal transition-colors duration-300">Beneficios</a>
                 <a href="#servicios" class="hover:text-accent-teal transition-colors duration-300">Servicios</a>
                 <a href="#clientes" class="hover:text-accent-teal transition-colors duration-300">Clientes</a>
                 <a href="#quienes-somos" class="hover:text-accent-teal transition-colors duration-300">Quiénes Somos</a>
                 <a href="#contacto" class="hover:text-accent-teal transition-colors duration-300">Contacto</a>
             </nav>
-            <!-- Botón de menú para móviles (ejemplo, no funcional sin JS) -->
-            <button class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            
+            <!-- Menú desplegable (con animaciones suaves) -->
+            <nav id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 bg-primary-dark border-t border-gray-600 z-30 shadow-lg">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col py-2">
+                        <a href="#beneficios" class="block py-3 px-4 border-b border-gray-600 hover:text-accent-teal hover:bg-gray-700 transition-colors duration-300">Beneficios</a>
+                        <a href="#servicios" class="block py-3 px-4 border-b border-gray-600 hover:text-accent-teal hover:bg-gray-700 transition-colors duration-300">Servicios</a>
+                        <a href="#clientes" class="block py-3 px-4 border-b border-gray-600 hover:text-accent-teal hover:bg-gray-700 transition-colors duration-300">Clientes</a>
+                        <a href="#quienes-somos" class="block py-3 px-4 border-b border-gray-600 hover:text-accent-teal hover:bg-gray-700 transition-colors duration-300">Quiénes Somos</a>
+                        <a href="#contacto" class="block py-3 px-4 hover:text-accent-teal hover:bg-gray-700 transition-colors duration-300">Contacto</a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -331,6 +387,74 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener referencias a los elementos
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
 
+            // Variable para trackear el estado del menú
+            let isMenuOpen = false;
+
+            // Función para mostrar el menú con animación
+            function showMobileMenu() {
+                isMenuOpen = true;
+                mobileMenu.classList.add('show');
+                hamburgerIcon.classList.add('active');
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-times');
+            }
+
+            // Función para ocultar el menú con animación
+            function hideMobileMenu() {
+                if (isMenuOpen) {
+                    isMenuOpen = false;
+                    mobileMenu.classList.remove('show');
+                    hamburgerIcon.classList.remove('active');
+                    hamburgerIcon.classList.remove('fa-times');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+            }
+
+            // Toggle del menú al hacer clic en el botón hamburguesa
+            mobileMenuButton.addEventListener('click', () => {
+                if (isMenuOpen) {
+                    hideMobileMenu();
+                } else {
+                    showMobileMenu();
+                }
+            });
+
+            // Cerrar el menú cuando se hace clic en un enlace
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hideMobileMenu();
+                });
+            });
+
+            // Ocultar el menú cuando la pantalla se redimensiona a desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 1024) {
+                    hideMobileMenu();
+                }
+            });
+
+            // Asegurar que el menú esté oculto al cargar si es desktop
+            if (window.innerWidth >= 1024) {
+                hideMobileMenu();
+            }
+
+            // Cerrar menú al hacer clic fuera de él
+            document.addEventListener('click', (event) => {
+                if (isMenuOpen && 
+                    !mobileMenu.contains(event.target) && 
+                    !mobileMenuButton.contains(event.target)) {
+                    hideMobileMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
