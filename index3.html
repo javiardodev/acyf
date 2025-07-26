@@ -236,6 +236,176 @@
         .hamburger-icon.active {
             transform: rotate(90deg);
         }
+        
+        /* Mejoras para el grid de servicios - Sistema dinámico e inteligente */
+        .services-grid-enhanced {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            justify-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .services-grid-enhanced {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .services-grid-enhanced {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                justify-items: stretch;
+            }
+            
+            /* Sistema inteligente para centrar tarjetas restantes */
+            /* Si hay 7 tarjetas, centrar la 7ma */
+            .services-grid-enhanced .service-card-enhanced:nth-child(7):nth-last-child(1) {
+                grid-column: 2;
+            }
+            
+            /* Si hay 8 tarjetas, centrar las últimas 2 */
+            .services-grid-enhanced .service-card-enhanced:nth-child(7):nth-last-child(2) {
+                grid-column: 1;
+            }
+            .services-grid-enhanced .service-card-enhanced:nth-child(8):nth-last-child(1) {
+                grid-column: 3;
+            }
+            
+            /* Si hay 5 tarjetas, centrar las últimas 2 */
+            .services-grid-enhanced .service-card-enhanced:nth-child(4):nth-last-child(2) {
+                grid-column: 1;
+            }
+            .services-grid-enhanced .service-card-enhanced:nth-child(5):nth-last-child(1) {
+                grid-column: 3;
+            }
+            
+            /* Si hay 4 tarjetas, centrar la 4ta */
+            .services-grid-enhanced .service-card-enhanced:nth-child(4):nth-last-child(1) {
+                grid-column: 2;
+            }
+            
+            /* Si hay 2 tarjetas, centrarlas */
+            .services-grid-enhanced .service-card-enhanced:nth-child(1):nth-last-child(2) {
+                grid-column: 1;
+            }
+            .services-grid-enhanced .service-card-enhanced:nth-child(2):nth-last-child(1) {
+                grid-column: 3;
+            }
+            
+            /* Si hay 1 tarjeta, centrarla */
+            .services-grid-enhanced .service-card-enhanced:only-child {
+                grid-column: 2;
+            }
+        }
+        
+        /* Tarjetas de servicio mejoradas */
+        .service-card-enhanced {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid transparent;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 140, 140, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-card-enhanced:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #008C8C;
+        }
+        
+        .service-card-enhanced:hover::before {
+            left: 100%;
+        }
+        
+        .service-icon-enhanced {
+            color: #008C8C;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .service-card-enhanced:hover .service-icon-enhanced {
+            transform: scale(1.1) rotate(5deg);
+            color: #006b6b;
+        }
+        
+        .service-title-enhanced {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1A2E47;
+            transition: color 0.3s ease;
+        }
+        
+        .service-card-enhanced:hover .service-title-enhanced {
+            color: #008C8C;
+        }
+        
+        .service-description-enhanced {
+            color: #4A5568;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+        
+        /* Animaciones de entrada escalonadas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .service-card-enhanced {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+        
+        .service-card-enhanced:nth-child(1) { animation-delay: 0.1s; }
+        .service-card-enhanced:nth-child(2) { animation-delay: 0.2s; }
+        .service-card-enhanced:nth-child(3) { animation-delay: 0.3s; }
+        .service-card-enhanced:nth-child(4) { animation-delay: 0.4s; }
+        .service-card-enhanced:nth-child(5) { animation-delay: 0.5s; }
+        .service-card-enhanced:nth-child(6) { animation-delay: 0.6s; }
+        .service-card-enhanced:nth-child(7) { animation-delay: 0.7s; }
+        
+        /* Mejora adicional: Asegurar máximo ancho para tarjetas */
+        .service-card-enhanced {
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        @media (min-width: 1024px) {
+            .service-card-enhanced {
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-primary-dark bg-white antialiased">
@@ -356,74 +526,74 @@
                 <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-primary-dark">
                     Nuestros <span class="text-accent-teal">Servicios Expertos</span> para Tu Negocio
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="services-grid-enhanced">
                     <!-- Tarjeta de Servicio 1 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-file-invoice-dollar"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Tributaria</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Asesoría Tributaria</h3>
+                        <p class="service-description-enhanced">
                             Planificación fiscal estratégica, preparación y presentación de declaraciones de impuestos (IVA, Renta, Retención en la Fuente), atención a requerimientos de la DIAN y optimización de tu carga tributaria.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 2 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-book"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Contable</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Asesoría Contable</h3>
+                        <p class="service-description-enhanced">
                             Implementación de Normas Internacionales de Información Financiera (NIIF), elaboración de estados financieros, registro de transacciones, contabilidad general para pymes y grandes empresas.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 3 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-search-dollar"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Revisoría Fiscal</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Revisoría Fiscal</h3>
+                        <p class="service-description-enhanced">
                             Auditoría interna y externa, control de gestión, certificación de estados financieros, evaluación de sistemas de control interno y cumplimiento de la normativa legal.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 4 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-chart-pie"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Asesoría Financiera</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Asesoría Financiera</h3>
+                        <p class="service-description-enhanced">
                             Análisis de flujo de caja, estructuración de deudas, optimización de inversiones, elaboración de presupuestos y proyecciones financieras para la toma de decisiones estratégicas.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 5 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-users-cog"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Gestión de Nómina</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Gestión de Nómina</h3>
+                        <p class="service-description-enhanced">
                             Liquidación de salarios y prestaciones sociales, gestión de seguridad social, elaboración de contratos y manejo de novedades de personal.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 6 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-lightbulb"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Consultoría y Capacitación</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Consultoría y Capacitación</h3>
+                        <p class="service-description-enhanced">
                             Programas de capacitación en temas contables y financieros, consultoría especializada para proyectos y optimización de procesos internos.
                         </p>
                     </article>
                     <!-- Tarjeta de Servicio 7 -->
-                    <article class="bg-white p-8 rounded-xl shadow-md border border-gray-200 hover:border-accent-teal transition-all duration-300">
-                        <div class="text-accent-teal text-5xl mb-6">
+                    <article class="service-card-enhanced">
+                        <div class="service-icon-enhanced">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-dark">Medios Magnéticos</h3>
-                        <p class="text-gray-700 leading-relaxed">
+                        <h3 class="service-title-enhanced">Medios Magnéticos</h3>
+                        <p class="service-description-enhanced">
                             Elaboración y presentación de medios magnéticos nacionales y distritales, información exógena, formato 1001, 1003, 1004, 1005, 1006, 1007 y demás reportes obligatorios ante la DIAN y entidades territoriales.
                         </p>
                     </article>
@@ -627,6 +797,42 @@
                     hideMobileMenu();
                 }
             });
+            
+            // Sistema inteligente de centrado para grid de servicios
+            function centerServiceCards() {
+                const grid = document.querySelector('.services-grid-enhanced');
+                const cards = grid.querySelectorAll('.service-card-enhanced');
+                const cardCount = cards.length;
+                
+                // Solo aplicar en desktop (lg y superiores)
+                if (window.innerWidth >= 1024) {
+                    // Resetear posiciones previas
+                    cards.forEach(card => {
+                        card.style.gridColumn = '';
+                    });
+                    
+                    // Aplicar centrado inteligente basado en el número total
+                    const remainder = cardCount % 3;
+                    
+                    if (remainder === 1) {
+                        // Si sobra 1 tarjeta, centrarla
+                        const lastCard = cards[cardCount - 1];
+                        lastCard.style.gridColumn = '2';
+                    } else if (remainder === 2) {
+                        // Si sobran 2 tarjetas, centrarlas
+                        const secondLastCard = cards[cardCount - 2];
+                        const lastCard = cards[cardCount - 1];
+                        secondLastCard.style.gridColumn = '1';
+                        lastCard.style.gridColumn = '3';
+                    }
+                }
+            }
+            
+            // Ejecutar el centrado después de que las animaciones terminen
+            setTimeout(centerServiceCards, 1000);
+            
+            // Ejecutar al redimensionar la ventana
+            window.addEventListener('resize', centerServiceCards);
         });
     </script>
     
