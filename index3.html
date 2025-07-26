@@ -804,13 +804,13 @@
                 const cards = grid.querySelectorAll('.service-card-enhanced');
                 const cardCount = cards.length;
                 
-                // Solo aplicar en desktop (lg y superiores)
+                // Resetear todas las posiciones primero
+                cards.forEach(card => {
+                    card.style.gridColumn = '';
+                });
+                
+                // Solo aplicar centrado en desktop (lg y superiores)
                 if (window.innerWidth >= 1024) {
-                    // Resetear posiciones previas
-                    cards.forEach(card => {
-                        card.style.gridColumn = '';
-                    });
-                    
                     // Aplicar centrado inteligente basado en el número total
                     const remainder = cardCount % 3;
                     
@@ -826,6 +826,7 @@
                         lastCard.style.gridColumn = '3';
                     }
                 }
+                // En móvil y tablet, las tarjetas mantienen su posición natural (lista/grid 2x2)
             }
             
             // Ejecutar el centrado después de que las animaciones terminen
