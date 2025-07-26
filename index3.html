@@ -808,23 +808,55 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <!-- Columna del Logo y Nombre -->
             <div class="flex flex-col items-center md:items-start">
-                <a href="#hero" class="flex items-center space-x-2 mb-4">
-                    <svg class="w-10 h-10 text-accent-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <a href="#hero" class="flex flex-col items-center md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-2 mb-4">
+                    <svg class="w-12 h-12 md:w-10 md:h-10 text-accent-teal" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.31L18.6 7.5 12 10.69 5.4 7.5 12 4.31zM4 9l8 4 8-4v6l-8 4-8-4V9zm8 9.38L5.4 15.5 12 12.31l6.6 3.19L12 18.38z"/>
                     </svg>
-                    <span class="text-3xl font-bold tracking-tight">Asesores Contables & Financieros</span>
+                    <span class="text-2xl md:text-3xl font-bold tracking-tight text-center md:text-left">Asesores Contables & Financieros</span>
                 </a>
                 <p class="text-gray-300 text-sm mt-2">&copy; 2025 Todos los derechos reservados.</p>
             </div>
 
             <!-- Columna de Información de Contacto -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4 text-accent-teal">Contáctanos</h3>
-                <address class="not-italic text-gray-300 space-y-2">
-                    <p><i class="fas fa-map-marker-alt mr-2 text-white"></i> Carrera 10 # 12-13 - Santa Ana, Guamo, Tolima, Colombia</p>
-                    <p><i class="fas fa-phone-alt mr-2 text-white"></i> <a href="tel:+573058555694" class="hover:text-white transition-colors duration-300">+57 305 855 5694</a></p>
-                    <p><i class="fas fa-envelope mr-2 text-white"></i> <a href="mailto:anamilenavalderrama@hotmail.com" class="hover:text-white transition-colors duration-300">anamilenavalderrama@hotmail.com</a></p>
-                    <p><i class="fab fa-whatsapp mr-2 text-white"></i> <a href="https://wa.me/+573058555694?text=Hola,%20me%20interesa%20una%20asesoría%20contable/financiera." target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-300">Envíanos un WhatsApp</a></p>
+            <div class="flex flex-col items-center md:items-start">
+                <h3 class="text-xl font-semibold mb-6 text-accent-teal">Contáctanos</h3>
+                <address class="not-italic text-gray-300 space-y-4 w-full">
+                    <!-- Dirección física -->
+                    <div class="flex items-start space-x-3 justify-center md:justify-start">
+                        <i class="fas fa-map-marker-alt mt-1 text-accent-teal flex-shrink-0 hidden md:block"></i>
+                        <div class="text-sm leading-relaxed text-center md:text-left">
+                            <p class="text-white font-medium">Dirección:</p>
+                            <p>Carrera 10 # 12-13 - Santa Ana</p>
+                            <p>Guamo, Tolima, Colombia</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="flex items-center space-x-3 justify-center md:justify-start">
+                        <i class="fas fa-phone-alt text-accent-teal flex-shrink-0 hidden md:block"></i>
+                        <div class="text-sm text-center md:text-left">
+                            <p class="text-white font-medium">Teléfono:</p>
+                            <a href="tel:+573058555694" class="hover:text-accent-teal transition-colors duration-300">+57 305 855 5694</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="flex items-center space-x-3 justify-center md:justify-start">
+                        <i class="fas fa-envelope text-accent-teal flex-shrink-0 hidden md:block"></i>
+                        <div class="text-sm text-center md:text-left">
+                            <p class="text-white font-medium">Email:</p>
+                            <a href="mailto:anamilenavalderrama@hotmail.com" class="hover:text-accent-teal transition-colors duration-300 break-all">anamilenavalderrama@hotmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- WhatsApp -->
+                    <div class="flex items-center space-x-3 justify-center md:justify-start">
+                        <i class="fab fa-whatsapp text-accent-teal flex-shrink-0 hidden md:block"></i>
+                        <div class="text-sm text-center md:text-left">
+                            <p class="text-white font-medium">WhatsApp:</p>
+                            <a href="https://wa.me/+573058555694?text=Hola,%20me%20interesa%20una%20asesoría%20contable/financiera." target="_blank" rel="noopener noreferrer" class="hover:text-accent-teal transition-colors duration-300">Envíanos un mensaje</a>
+                        </div>
+                    </div>
                 </address>
             </div>
 
