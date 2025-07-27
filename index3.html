@@ -655,6 +655,91 @@
                 transform: none;
             }
         }
+        
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(100px);
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: translateY(0) scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-float i {
+            color: white;
+            font-size: 28px;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-float:hover i {
+            transform: scale(1.1);
+        }
+        
+        /* Animación de pulso sutil */
+        @keyframes whatsappPulse {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+        }
+        
+        .whatsapp-float {
+            animation: whatsappPulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            animation: none;
+        }
+        
+        /* Responsive para dispositivos móviles */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 15px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+        
+        /* Asegurar que el botón no interfiera con otros elementos */
+        .whatsapp-float {
+            pointer-events: auto;
+        }
+        
+        .whatsapp-float.show {
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="font-sans text-primary-dark bg-white antialiased">
@@ -878,19 +963,19 @@
                     <!-- Puedes añadir más testimonios o logos de clientes aquí -->
                 </div>
                 <!-- Sección para logos de clientes (opcional, si tienes permiso) -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-semibold mb-8 text-primary-dark">Algunas empresas que confían en nosotros:</h3>
-                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <!-- <div class="mt-16"> -->
+                    <!-- <h3 class="text-2xl font-semibold mb-8 text-primary-dark">Algunas empresas que confían en nosotros:</h3> -->
+                    <!-- <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12"> -->
                         <!-- Logo de Cliente 1 -->
-                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+A" alt="Logo de Empresa A" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+A" alt="Logo de Empresa A" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300"> -->
                         <!-- Logo de Cliente 2 -->
-                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+B" alt="Logo de Empresa B" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+B" alt="Logo de Empresa B" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300"> -->
                         <!-- Logo de Cliente 3 -->
-                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+C" alt="Logo de Empresa C" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
+                        <!-- <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+C" alt="Logo de Empresa C" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300"> -->
                         <!-- Logo de Cliente 4 -->
-                        <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+D" alt="Logo de Empresa D" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300">
-                    </div>
-                </div>
+                        <!-- <img src="https://placehold.co/120x60/6C7A89/FFFFFF?text=Logo+Empresa+D" alt="Logo de Empresa D" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300"> -->
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
         </section>
 
@@ -998,6 +1083,17 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/+573058555694?text=Hola,%20me%20interesa%20una%20asesoría%20contable/financiera."
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="whatsapp-float"
+       id="whatsapp-float"
+       aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Obtener referencias a los elementos
@@ -1112,6 +1208,30 @@
             
             // Ejecutar al redimensionar la ventana
             window.addEventListener('resize', centerServiceCards);
+            
+            // Control del botón flotante de WhatsApp
+            const whatsappFloat = document.getElementById('whatsapp-float');
+            const heroSection = document.getElementById('hero');
+            
+            function handleWhatsappFloat() {
+                if (!whatsappFloat || !heroSection) return;
+                
+                const heroHeight = heroSection.offsetHeight;
+                const scrollPosition = window.scrollY;
+                
+                // Mostrar el botón cuando se haya pasado la sección hero
+                if (scrollPosition > heroHeight - 100) {
+                    whatsappFloat.classList.add('show');
+                } else {
+                    whatsappFloat.classList.remove('show');
+                }
+            }
+            
+            // Ejecutar al hacer scroll
+            window.addEventListener('scroll', handleWhatsappFloat);
+            
+            // Ejecutar una vez al cargar para verificar posición inicial
+            handleWhatsappFloat();
         });
     </script>
     
